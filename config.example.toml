@@ -1,0 +1,41 @@
+# Copy to config.toml and edit. Relative paths are relative to this file.
+# "~" works on both Windows and macOS.
+
+# Folder to watch. Drop (or save/download) lab spreadsheets here.
+watch_folder = "~/SoilTests/Inbox"
+
+# The master workbook every result is appended to. Created if missing.
+master_file = "~/SoilTests/Master Soil Tests.xlsx"
+master_sheet = "Soil Tests"
+
+# Where files go after import. Defaults to Inbox/Processed and Inbox/Failed.
+# processed_folder = "~/SoilTests/Processed"
+# failed_folder = "~/SoilTests/Failed"
+
+log_file = "~/SoilTests/soil_agent.log"
+
+# Sheet to read in incoming files. Blank = first sheet.
+# source_sheet = "Results"
+
+# If an incoming file has a column the master doesn't, add it to the master.
+add_new_columns = true
+
+# How often to re-check the inbox for files that were skipped (e.g. master was open).
+rescan_seconds = 60
+
+# Master column -> other spellings labs use for it. Matching ignores case and spacing.
+# These also set the column order when a new master is created.
+# "Source File" and "Imported At" are added automatically.
+[columns]
+"Sample ID"              = ["sample", "sample no", "sample number", "lab id", "sample ref"]
+"Site"                   = ["location", "site name", "paddock", "block"]
+"Date Sampled"           = ["date", "sample date", "sampling date"]
+"Depth (cm)"             = ["depth", "depth cm", "sample depth"]
+"pH (CaCl2)"             = ["ph cacl2", "ph (cacl2)", "ph - cacl2"]
+"pH (Water)"             = ["ph water", "ph (water)", "ph (h2o)", "ph h2o"]
+"EC (dS/m)"              = ["ec", "electrical conductivity", "ec 1:5"]
+"Organic Carbon (%)"     = ["oc", "organic carbon", "oc %"]
+"Nitrate N (mg/kg)"      = ["nitrate", "nitrate n", "no3-n"]
+"Phosphorus Colwell (mg/kg)" = ["colwell p", "phosphorus", "p colwell"]
+"Potassium (mg/kg)"      = ["k", "potassium", "colwell k"]
+"Sulfur (mg/kg)"         = ["s", "sulfur", "sulphur", "kcl40 s"]
